@@ -15,4 +15,16 @@ class Phrase
     rand_ary
   end
 
+  def parse_guess(guess)
+    @guess_phrase = guess.split("")
+  end
+
+  def num_correct
+    3
+  end
+
+  def pos_correct
+    3
+  end
+
 end
