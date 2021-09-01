@@ -19,4 +19,8 @@ class Phrase
     @guess_phrase = guess.split("")
   end
 
+  def num_correct
+    3
+  end
+
 end
