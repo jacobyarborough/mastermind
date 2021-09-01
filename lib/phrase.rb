@@ -30,7 +30,13 @@ class Phrase
   end
 
   def pos_correct
-    3
+    correct = 0
+    @guess_phrase.each_with_index do |element, index|
+      if @secret_phrase[index] == element
+        correct += 1
+      end
+    end
+  return correct
   end
 
 end
