@@ -47,8 +47,8 @@ RSpec.describe Phrase do
       phrase = Phrase.new
       guess = "rgby"
       phrase.parse_guess(guess)
-      pos_correct = phrase.pos_correct
-      expect(pos_correct).to be_between(0, 4)
+
+      expect(phrase.pos_correct).to be_between(0, 4)
     end
   end
 
