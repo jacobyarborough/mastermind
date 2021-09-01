@@ -15,4 +15,8 @@ class Phrase
     rand_ary
   end
 
+  def parse_guess(guess)
+    @guess_phrase = guess.split("")
+  end
+
 end
