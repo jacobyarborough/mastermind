@@ -23,4 +23,8 @@ class Phrase
     3
   end
 
+  def pos_correct
+    3
+  end
+
 end
