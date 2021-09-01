@@ -20,7 +20,13 @@ class Phrase
   end
 
   def num_correct
-    3
+    correct = 0
+    @guess_phrase.uniq.each do |element|
+      if @secret_phrase.include?(element) == true
+        correct += 1
+      end
+    end
+    return correct
   end
 
   def pos_correct
