@@ -7,8 +7,8 @@ class GameFlow
   end
 
   def won_game?
-
-  end 
+    phrase.num_correct == 4 && phrase.pos_correct == 4
+  end
 
 
   def play
