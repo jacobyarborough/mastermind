@@ -27,12 +27,14 @@ describe GameFlow do
     end
   end
 
-  describe "#game_won?" do
+  describe "#won_game?" do
     xit "returns true if game has been won" do
       phrase = Phase.new
+      guess = 'rgby'
+      phrase.parse_guess(guess)
+      game = Game.new
 
-
-      expect()
+      expect(game.won_game).to eq(true)
     end
   end
 
