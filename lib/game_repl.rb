@@ -1,4 +1,4 @@
-class Turn
+class GameRepl
 
   attr_reader :phrase
 
