@@ -19,7 +19,7 @@ class GameRepl
 
   def play
     guess_count = 0
-    until game_won?
+    until game_won? == true
       assign_guess
       p "#{phrase.guess_phrase} has #{phrase.num_correct} elements correct with #{phrase.pos_correct} in the correct positions"
       guess_count += 1
