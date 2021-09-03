@@ -22,7 +22,7 @@ describe GameRepl do
     end
   end
 
-  describe "#assign_guss" do
+  describe "#assign_guess" do
     it "assigns the user guess to the phrase object" do
       turn = GameRepl.new
       turn.assign_guess
