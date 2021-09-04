@@ -1,6 +1,7 @@
 require 'rspec'
 require './lib/phrase'
 require './lib/game_repl'
+require './lib/messages'
 
 describe GameRepl do
 
