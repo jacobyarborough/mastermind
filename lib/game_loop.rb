@@ -14,7 +14,7 @@ class GameLoop
       if game_status == 'y'
         @game_repl = GameRepl.new
         @game_repl.play
-        p "You have won the game!"
+        #p "You have won the game!"
         #p "Would you like to play again? Enter 'yes' or 'no'"
         #print "> "
       elsif game_status == 'i'
