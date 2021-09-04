@@ -39,5 +39,7 @@ class Messages
   end
 
   def cheat
+    puts "The secret phrase is #{phrase.secret_phrase}"
+  end
 
 end
