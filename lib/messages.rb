@@ -24,18 +24,20 @@ class Messages
     #{count} guess\n"
   end
 
-  def game_won(phrase, count, time)
+  def game_won
     puts "Congratulations! You guessed the sequnce
     '#{phrase.guess_phrase}' in #{count} guesses in over #{time}
     \nDo you want to (p)lay again or (q)uit?"
   end
 
-  def too_long(phrase)
+  def too_long
     puts "#{phrase.guess_phrase} is too long, try again\n"
   end
 
-  def too_short(phrase)
+  def too_short
     puts "#{phrase.guess_phrase} is too short, try again\n"
   end
+
+  def cheat
 
 end
