@@ -18,7 +18,7 @@ class Messages
     \n (r)ed,(g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game.\nWhat's your guess?"
   end
 
-  def incorrect_guess
+  def default_guess
     puts "#{phrase.guess_phrase} has #{phrase.num_correct} elements
     with #{phrase.pos_correct} in the correct positions.\n You've taken
     #{count} guess\n"
