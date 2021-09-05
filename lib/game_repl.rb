@@ -14,8 +14,9 @@ class GameRepl
   end
 
   def assign_guess
-    p "enter guess"
-    print "> "
+    print "
+enter guess
+> "
     guess = $stdin.gets.chomp
     @phrase.parse_guess(guess)
   end
@@ -45,7 +46,7 @@ class GameRepl
     end
     finish = Time.now
     @time_diff = (finish - start)
-    @message.game_won(@phrase.secret_phrase,join, @guess_counter, @time_diff)
+    @message.game_won(@phrase.secret_phrase.join, @guess_counter, @time_diff)
   end
 
 end
