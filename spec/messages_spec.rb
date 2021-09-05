@@ -1,7 +1,4 @@
 require 'rspec'
-require './lib/phrase'
-require './lib/game_repl'
-require './lib/game_loop'
 require './lib/messages'
 
 describe Messages do
