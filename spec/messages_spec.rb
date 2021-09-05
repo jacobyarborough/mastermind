@@ -48,13 +48,31 @@ Use (q)uit at any time to end the game.
 
   describe "#default_guess" do
     it "puts the default_guess message" do
-      game = GameRepl.new
-      game.phrase.guess_phrase = ['r', 'g', 'g', 'b']
+      guess_phrase = ['r', 'g', 'g', 'b']
+      num_correct = 2
+      pos_correct = 1
+      guess_counter = 0
       expect do
-        Messages.new.default_guess(game.phrase.guess_phrase.join, game.phrase.num_correct, game.phrase.pos_correct, game.guess_counter)
+        Messages.new.default_guess(guess_phrase.join, num_correct, pos_correct, guess_counter)
       end.to output("--------------------------------------------------------------------------------------
 rggb has 2 of the correct elements, with 1 in the correct positions.
 You have taken 0 guess(es).
+--------------------------------------------------------------------------------------").to_stdout
+    end
+  end
+
+  describe "#game_won" do
+    it "puts the game_won message" do
+      secret_phrase = ['r','r','r','g']
+      guess_counter = 0
+      time_diff = 0.0
+
+      expect do
+        Messages.new.game_won(secret_phrase.join, guess_counter, time_diff)
+      end.to output("--------------------------------------------------------------------------------------
+Congratulations! You guessed the sequnce rrrg in 0 guess(es) in 0.0 seconds.
+
+Do you want to (p)lay again or (q)uit?
 --------------------------------------------------------------------------------------").to_stdout
     end
   end
