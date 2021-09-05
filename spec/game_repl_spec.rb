@@ -36,24 +36,27 @@ describe GameRepl do
     it "given the input 'q' will return out of the function" do
       turn = GameRepl.new
       guess = 'q'
-      phrase.parse_guess(guess)
+      turn.phrase.parse_guess(guess)
 
-      expect(turn.evaluate_guess).to eq(return)
+      expect(turn.evaluate_guess).to be_nil
     end
 
     it "given the input 'i' will print game info" do
       message = Messages.new
       turn = GameRepl.new
       guess = 'i'
-      phrase.parse_guess(guess)
+      turn.phrase.parse_guess(guess)
 
       expect(turn.evaluate_guess).to eq(message.instructions)
     end
 
     it "given the input 'c' will return the secret phrase" do
+      message = Messages.new
       turn = GameRepl.new
+      guess = 'c'
+      turn.phrase.parse_guess(guess)
 
-      expect(turn.evaluate_guess).to include("['r','g','g','g']")
+      expect(turn.evaluate_guess).to eq(message.cheat(turn.phrase.secret_phrase))
     end
   end
 
