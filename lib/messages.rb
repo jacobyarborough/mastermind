@@ -8,38 +8,38 @@ class Messages
   end
 
   def instructions
-    puts "I have generated a sequence with four elements made up of:\n(r)ed,
+    p "I have generated a sequence with four elements made up of:\n(r)ed,
     (g)reen, (b)lue, and (y)ellow.n\Use (q)uit at any time to end the game.
     \nUse (c)heat to peak at the solution."
   end
 
   def game_start
-    puts "I have generated a beginner sequence with four elements made up of:
+    p "I have generated a beginner sequence with four elements made up of:
     \n (r)ed,(g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game.\nWhat's your guess?"
   end
 
-  def default_guess
-    puts "#{phrase.guess_phrase} has #{phrase.num_correct} elements
-    with #{phrase.pos_correct} in the correct positions.\n You've taken
-    #{count} guess\n"
+  def default_guess(guess_phrase, num_correct, pos_correct, guess_count)
+    p "#{guess_phrase} has #{num_correct} elements
+    with #{pos_correct} in the correct positions.\n You've taken
+    #{guess_count} guess\n"
   end
 
-  def game_won
-    puts "Congratulations! You guessed the sequnce
-    '#{phrase.guess_phrase}' in #{count} guesses in over #{time}
+  def game_won(secret_phrase, guess_count, time_diff)
+    p "Congratulations! You guessed the sequnce
+    '#{secret_phrase}' in #{guess_count} guesses in #{time_diff} seconds.
     \nDo you want to (p)lay again or (q)uit?"
   end
 
-  def too_long
-    puts "#{phrase.guess_phrase} is too long, try again\n"
+  def too_long(guess_phrase)
+    p "#{guess_phrase} is too long, try again\n"
   end
 
-  def too_short
-    puts "#{phrase.guess_phrase} is too short, try again\n"
+  def too_short(guess_phrase)
+    p "#{guess_phrase} is too short, try again\n"
   end
 
-  def cheat
-    puts "The secret phrase is #{phrase.secret_phrase}"
+  def cheat(secret_phrase)
+    p "The secret phrase is #{secret_phrase}"
   end
 
 end
