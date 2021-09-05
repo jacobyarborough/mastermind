@@ -37,11 +37,11 @@ class GameRepl
     start = Time.now
     until game_won? == true
       @guess_counter += 1
-      assign_guess
-      evaluate_guess
       if @phrase.guess_phrase == ['q']
         return
-      end 
+      end
+      assign_guess
+      evaluate_guess
     end
     finish = Time.now
     @time_diff = (finish - start)
