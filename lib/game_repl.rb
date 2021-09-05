@@ -1,6 +1,6 @@
 class GameRepl
 
-  attr_reader :phrase
+  attr_reader :phrase, :guess_counter
 
   def initialize
     @phrase = Phrase.new
