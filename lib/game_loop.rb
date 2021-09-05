@@ -3,23 +3,27 @@ class GameLoop
   attr_reader :game_repl
 
   def initialize
-    @game_repl = game_repl
+    @game_repl = GameRepl.new
+    @game_loop_message = Messages.new
   end
 
   def go
-    game_status = ''
-    while game_status != 'e'
-      p 'Welcome to Mastermind. If you would like to start the game \nenter y'
-      game_status = $stdin.gets.chomp
-      if game_status == 'y'
+    #game_status = ''
+    @game_loop_message.intro
+    @game_repl.phrase.guess_phrase.push($stdin.gets.chomp)
+    while @game_repl.phrase.guess_phrase != ['q']
+      if @game_repl.phrase.guess_phrase == ['p']
+        @game_loop_message.game_start
         @game_repl = GameRepl.new
         @game_repl.play
-        #p "You have won the game!"
-        #p "Would you like to play again? Enter 'yes' or 'no'"
-        #print "> "
-      elsif game_status == 'i'
+        @game_repl.phrase.guess_phrase = []
+        @game_repl.phrase.guess_phrase.push($stdin.gets.chomp)
+      elsif @game_repl.phrase.guess_phrase == ['i']
         p "here is some info"
-      elsif game_status == 'e'
+        @game_repl.phrase.guess_phrase = []
+        @game_loop_message.intro
+        @game_repl.phrase.guess_phrase.push($stdin.gets.chomp)
+      elsif @game_repl.phrase.guess_phrase == ['q']
         return
       end
     end
