@@ -33,4 +33,17 @@ Use (i)nstructions to view the game instructions.
     end
   end
 
+  describe "#game_start" do
+    it "puts the intro message" do
+      expect do
+        Messages.new.game_start
+      end.to output("--------------------------------------------------------------------------------------
+I have generated a beginner sequence with four elements made up of:
+(r)ed, (g)reen, (b)lue, and (y)ellow.
+
+Use (q)uit at any time to end the game.
+--------------------------------------------------------------------------------------").to_stdout
+    end
+  end
+
 end
