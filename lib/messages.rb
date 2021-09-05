@@ -1,45 +1,46 @@
 class Messages
 
   def intro
-    puts "Welcome to MASTERMIND"
-    puts ""
-    puts "Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
-    puts "> "
+    print "Welcome to MASTERMIND
+
+Would you like to (p)lay, read the (i)nstructions, or (q)uit?
+
+> "
   end
 
   def instructions
-    puts "--------------------------------------------------------------------------------------"
-    puts "A sequence containing some or all of the elements (r)ed, (g)reen, (b)lue, and (y)ellow"
-    puts "has been generated. It contains four elements."
-    puts ""
-    puts "Use (q)uit at any time to end the game."
-    puts "Use (c)heat to peak at the solution."
-    puts "Use (i)nstructions to view the game instructions."
-    puts "--------------------------------------------------------------------------------------"
+    print "--------------------------------------------------------------------------------------
+A sequence containing some or all of the elements (r)ed, (g)reen, (b)lue, and (y)ellow
+has been generated. It contains four elements.
+
+Use (q)uit at any time to end the game.
+Use (c)heat to peak at the solution.
+Use (i)nstructions to view the game instructions.
+--------------------------------------------------------------------------------------"
   end
 
   def game_start
-    puts "--------------------------------------------------------------------------------------"
-    puts "I have generated a beginner sequence with four elements made up of:"
-    puts "(r)ed, (g)reen, (b)lue, and (y)ellow."
-    puts ""
-    puts "Use (q)uit at any time to end the game."
-    puts "--------------------------------------------------------------------------------------"
+    print "--------------------------------------------------------------------------------------
+I have generated a beginner sequence with four elements made up of:
+(r)ed, (g)reen, (b)lue, and (y)ellow.
+
+Use (q)uit at any time to end the game.
+--------------------------------------------------------------------------------------"
   end
 
   def default_guess(guess_phrase, num_correct, pos_correct, guess_count)
-    puts "--------------------------------------------------------------------------------------"
-    puts "#{guess_phrase} has #{num_correct} of the correct elements, with #{pos_correct} in the correct positions."
-    puts "You have taken #{guess_count} guess(es)."
-    puts "--------------------------------------------------------------------------------------"
+    print "--------------------------------------------------------------------------------------
+#{guess_phrase} has #{num_correct} of the correct elements, with #{pos_correct} in the correct positions.
+You have taken #{guess_count} guess(es).
+--------------------------------------------------------------------------------------"
   end
 
   def game_won(secret_phrase, guess_count, time_diff)
-    puts "--------------------------------------------------------------------------------------"
-    puts "Congratulations! You guessed the sequnce '#{secret_phrase}' in #{guess_count} guess(es) in #{time_diff} seconds."
-    puts ""
-    puts "Do you want to (p)lay again or (q)uit?"
-    puts "--------------------------------------------------------------------------------------"
+    print "--------------------------------------------------------------------------------------
+Congratulations! You guessed the sequnce #{secret_phrase} in #{guess_count} guess(es) in #{time_diff} seconds.
+
+Do you want to (p)lay again or (q)uit?
+--------------------------------------------------------------------------------------"
   end
 
   def too_long(guess_phrase)
