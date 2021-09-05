@@ -28,7 +28,7 @@ class GameRepl
     elsif @phrase.guess_phrase == ["c"]
       @message.cheat(@phrase.secret_phrase)
     else
-      @message.default_guess(@phrase.guess_phrase , @phrase.num_correct, @phrase.pos_correct, @guess_counter)
+      @message.default_guess(@phrase.guess_phrase.join, @phrase.num_correct, @phrase.pos_correct, @guess_counter)
     end
   end
 
@@ -45,7 +45,7 @@ class GameRepl
     end
     finish = Time.now
     @time_diff = (finish - start)
-    @message.game_won(@phrase.secret_phrase, @guess_counter, @time_diff)
+    @message.game_won(@phrase.secret_phrase,join, @guess_counter, @time_diff)
   end
 
 end
