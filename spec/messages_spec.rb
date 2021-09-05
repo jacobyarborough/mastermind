@@ -77,4 +77,16 @@ Do you want to (p)lay again or (q)uit?
     end
   end
 
+  describe "#cheat" do
+    it "puts the cheat message" do
+      secret_phrase = ['r','r','r','g']
+
+      expect do
+        Messages.new.cheat(secret_phrase.join)
+      end.to output("--------------------------------------------------------------------------------------
+The secret phrase is rrrg.
+--------------------------------------------------------------------------------------").to_stdout
+    end
+  end
+
 end
