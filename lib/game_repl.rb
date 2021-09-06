@@ -27,7 +27,7 @@ enter guess
     elsif @phrase.guess_phrase == ["i"]
       @message.instructions
     elsif @phrase.guess_phrase == ["c"]
-      @message.cheat(@phrase.secret_phrase)
+      @message.cheat(@phrase.secret_phrase.join)
     else
       @message.default_guess(@phrase.guess_phrase.join, @phrase.num_correct, @phrase.pos_correct, @guess_counter)
     end
