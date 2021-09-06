@@ -1,5 +1,7 @@
 class Phrase
-  attr_reader :secret_phrase, :guess_phrase
+
+  attr_accessor :guess_phrase
+  attr_reader :secret_phrase
 
   def initialize
     @secret_phrase = randomize

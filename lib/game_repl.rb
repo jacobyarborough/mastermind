@@ -4,27 +4,53 @@ class GameRepl
 
   def initialize
     @phrase = Phrase.new
+    @message = Messages.new
+    @guess_counter = 0
+    @time_diff = 0.0
   end
 
   def game_won?
-    @phrase.num_correct == @phrase.secret_phrase.uniq.length && @phrase.pos_correct == 4
+    @phrase.num_correct == @phrase.secret_phrase.uniq.length && @phrase.pos_correct == @phrase.secret_phrase.length
   end
 
   def assign_guess
-    p "enter guess"
-    print "> "
+    print "
+enter guess
+> "
     guess = $stdin.gets.chomp
-    phrase.parse_guess(guess)
+    @phrase.parse_guess(guess)
   end
 
-  def play
-    guess_count = 0
-    until game_won?
-      assign_guess
-      p "#{phrase.guess_phrase} has #{phrase.num_correct} elements correct with #{phrase.pos_correct} in the correct positions"
-      guess_count += 1
-      p "you've taken #{guess_count} guesses"
+  def evaluate_guess
+    if @phrase.guess_phrase == ['q']
+      return
+    elsif @phrase.guess_phrase == ["i"]
+      @message.instructions
+    elsif @phrase.guess_phrase == ["c"]
+      @message.cheat(@phrase.secret_phrase.join)
+    elsif @phrase.guess_phrase.length > 4
+      @message.too_long(@phrase.guess_phrase.join)
+    elsif @Phrase.guess_phrase.length < 4
+      @message.too_short(@phrase.guess_phrase.join)
+    else
+      @message.default_guess(@phrase.guess_phrase.join, @phrase.num_correct, @phrase.pos_correct, @guess_counter)
     end
+  end
+
+
+  def play
+    start = Time.now
+    until game_won? == true
+      @guess_counter += 1
+      if @phrase.guess_phrase == ['q']
+        return
+      end
+      assign_guess
+      evaluate_guess
+    end
+    finish = Time.now
+    @time_diff = (finish - start)
+    @message.game_won(@phrase.secret_phrase.join, @guess_counter, @time_diff)
   end
 
 end
