@@ -44,11 +44,11 @@ Do you want to (p)lay again or (q)uit?
   end
 
   def too_long(guess_phrase)
-    print "#{guess_phrase} is too long, try again\n"
+    print "#{guess_phrase} is too long, please enter a four character guess"
   end
 
   def too_short(guess_phrase)
-    print "#{guess_phrase} is too short, try again\n"
+    print "#{guess_phrase} is too short, please enter a four character guess"
   end
 
   def cheat(secret_phrase)
