@@ -86,4 +86,24 @@ The secret phrase is rrrg.
     end
   end
 
+  describe "#too_long" do
+    it "puts the too_long message" do
+      guess_phrase = ['r', 'g', 'g', 'b', 'b']
+
+      expect do
+        Messages.new.too_long(guess_phrase.join)
+      end.to output("rggbb is too long, please enter a four character guess").to_stdout
+    end
+  end
+
+  describe "#too_short" do
+    it "puts the too_long message" do
+      guess_phrase = ['r', 'g', 'g']
+
+      expect do
+        Messages.new.too_long(guess_phrase.join)
+      end.to output("rgg is too long, please enter a four character guess").to_stdout
+    end
+  end
+
 end
