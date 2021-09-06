@@ -9,7 +9,7 @@ class Phrase
   end
 
   def randomize
-    arr = ["r", "r", "r", "g"]
+    arr = ["r", "g", "b", "y"]
     rand_ary = []
     4.times do
       rand_ary << arr.sample
