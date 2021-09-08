@@ -37,7 +37,7 @@ You have taken #{guess_count} guess(es).
 
   def game_won(secret_phrase, guess_count, time_diff)
     print "--------------------------------------------------------------------------------------
-Congratulations! You guessed the sequnce #{secret_phrase} in #{guess_count} guess(es) in #{time_diff} seconds.
+Congratulations! You guessed the sequnce #{secret_phrase} in #{guess_count} guess(es) in #{time_mins} minute(s) and #{time_secs} second(s).
 
 Do you want to (p)lay again or (q)uit?
 --------------------------------------------------------------------------------------"
