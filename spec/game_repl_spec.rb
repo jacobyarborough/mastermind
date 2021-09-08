@@ -60,4 +60,22 @@ describe GameRepl do
     end
   end
 
+  describe '#time_mins' do
+    it 'returns gameplay time in nearest whole minutes' do
+      turn = GameRepl.new
+      time_diff = 1000
+
+      expect(turn.time_mins(time_diff)).to eq(16)
+    end
+  end
+
+  describe '#time_secs' do
+    it 'returns gameplay time in seconds as a remainder of minutes' do
+      turn = GameRepl.new
+      time_diff = 1000
+
+      expect(turn.time_secs(time_diff)).to eq(40)
+    end
+  end
+
 end
