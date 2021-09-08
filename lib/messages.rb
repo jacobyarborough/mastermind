@@ -36,11 +36,13 @@ You have taken #{guess_count} guess(es).
   end
 
   def game_won(secret_phrase, guess_count, time_mins, time_secs)
-    print "--------------------------------------------------------------------------------------
+    print "
+--------------------------------------------------------------------------------------
 Congratulations! You guessed the sequnce #{secret_phrase} in #{guess_count} guess(es) in #{time_mins} minute(s) and #{time_secs} second(s).
 
 Do you want to (p)lay again or (q)uit?
---------------------------------------------------------------------------------------"
+--------------------------------------------------------------------------------------
+> "
   end
 
   def too_long(guess_phrase)
