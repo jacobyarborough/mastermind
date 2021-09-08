@@ -32,8 +32,8 @@ class GameLoop
       elsif @game_repl.phrase.guess_phrase == ['i']
         instruction_play
       elsif @game_repl.phrase.guess_phrase == ['q']
-        #@game_repl.phrase.guess_phrase = []
-        #return
+        @game_repl.phrase.guess_phrase = []
+        return
       end
     end
   end
@@ -42,6 +42,7 @@ class GameLoop
     while @game_repl.phrase.guess_phrase != ['q']
       @game_loop_message.intro
       @game_repl.phrase.guess_phrase.push($stdin.gets.chomp)
+      return if @game_repl.phrase.guess_phrase == ['q']
       main_game_play_loop
     end
   end
