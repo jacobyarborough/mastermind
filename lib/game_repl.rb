@@ -30,7 +30,7 @@ enter guess
       @message.cheat(@phrase.secret_phrase.join)
     elsif @phrase.guess_phrase.length > 4
       @message.too_long(@phrase.guess_phrase.join)
-    elsif @Phrase.guess_phrase.length < 4
+    elsif @phrase.guess_phrase.length < 4
       @message.too_short(@phrase.guess_phrase.join)
     else
       @message.default_guess(@phrase.guess_phrase.join, @phrase.num_correct, @phrase.pos_correct, @guess_counter)
