@@ -67,11 +67,13 @@ You have taken 0 guess(es).
 
       expect do
         Messages.new.game_won(secret_phrase.join, guess_counter, time_mins, time_secs)
-      end.to output("--------------------------------------------------------------------------------------
+      end.to output("
+--------------------------------------------------------------------------------------
 Congratulations! You guessed the sequnce rrrg in 0 guess(es) in 0 minute(s) and 1 second(s).
 
 Do you want to (p)lay again or (q)uit?
---------------------------------------------------------------------------------------").to_stdout
+--------------------------------------------------------------------------------------
+> ").to_stdout
     end
   end
 
