@@ -37,6 +37,13 @@ enter guess
     end
   end
 
+  def time_mins(time_diff)
+    (time_diff / 60) % 60
+  end
+
+  def time_secs(time_diff)
+    time_diff % 60
+  end
 
   def play
     start = Time.now
