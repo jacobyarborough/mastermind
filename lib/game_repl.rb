@@ -57,8 +57,8 @@ enter guess
     end
     finish = Time.now
     @time_diff = (finish - start)
-    mins = time_mins(@time_diff)
-    secs = time_secs(@time_diff)
+    mins = time_mins(@time_diff.round(0))
+    secs = time_secs(@time_diff.round(0))
     @message.game_won(@phrase.secret_phrase.join, @guess_counter, mins, secs)
   end
 
